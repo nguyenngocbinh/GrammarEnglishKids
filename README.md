@@ -16,7 +16,7 @@ An interactive, kid-friendly website for children aged **10+** to practice Engli
 | 🔄 Transformation | Rewrite sentences in a different form |
 | 🔗 Matching | Match items from two columns |
 
-### 6 Grammar Topics
+### 12 Grammar Topics
 | Topic | Content |
 |-------|---------|
 | ⏰ Tenses | Present Simple, Present Continuous, Past Simple, Future, Present Perfect, Past Continuous |
@@ -25,6 +25,12 @@ An interactive, kid-friendly website for children aged **10+** to practice Engli
 | 📎 Articles & Determiners | a/an/the, some/any, this/that/these/those |
 | ⚖️ Comparisons | Comparative (-er/more), Superlative (-est/most), as...as, Irregular forms |
 | 🔑 Modal Verbs | can, must, should, may, might, could |
+| 🔀 Conditionals | Zero, First, Second Conditional |
+| 🔄 Passive Voice | Present/Past Simple Passive, Perfect Passive, Continuous Passive |
+| 📍 Prepositions | Time (at/on/in), Place, Movement, Duration (for/since) |
+| 🔗 Conjunctions | Coordinating (FANBOYS), Subordinating, Correlative |
+| 🧩 Relative Clauses | who, which, that, whose, where, when |
+| 🎯 Gerunds & Infinitives | verb-ing vs to+verb patterns |
 
 ### Additional Features
 - 🎯 Topic filtering – practice specific grammar areas
