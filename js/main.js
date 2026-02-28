@@ -34,10 +34,12 @@ function switchGame(game) {
   currentGame = game;
   navBtns.forEach(b => b.classList.toggle('active', b.dataset.game === game));
   panels.forEach(p => p.classList.toggle('active', p.id === `panel-${game}`));
-  topicFilter.style.display = game === 'home' ? 'none' : 'flex';
+  topicFilter.style.display = (game === 'home' || game === 'learning-guide') ? 'none' : 'flex';
 
   // trigger init
-  if (game !== 'home' && window[`init_${game.replace(/-/g, '_')}`]) {
+  if (game === 'learning-guide' && window.initLearningGuide) {
+    window.initLearningGuide();
+  } else if (game !== 'home' && window[`init_${game.replace(/-/g, '_')}`]) {
     window[`init_${game.replace(/-/g, '_')}`](currentTopic);
   }
 }

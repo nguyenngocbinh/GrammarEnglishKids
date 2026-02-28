@@ -33,6 +33,10 @@ An interactive, kid-friendly website for children aged **10+** to practice Engli
 | 🎯 Gerunds & Infinitives | verb-ing vs to+verb patterns |
 
 ### Additional Features
+- 📖 **Learning Guide** – Complete grammar lessons with detailed explanations, examples, summary tables & important notes
+- 💡 **Study Tips** – 10 practical tips for effective grammar learning
+- 🗺️ **Learning Path** – Progressive roadmap from Beginner to Advanced (12 steps)
+- 🧩 **Quick Quiz** – Interactive mini-quizzes inside each lesson modal
 - 🎯 Topic filtering – practice specific grammar areas
 - 📊 Score tracking per exercise
 - 💡 Hints and explanations
@@ -65,8 +69,9 @@ GrammarEnglishKids/
 ├── css/
 │   └── style.css
 └── js/
-    ├── data.js              # All grammar exercise data
+    ├── data.js              # All grammar exercise data + lessons
     ├── main.js              # Navigation, utilities, topic filter
+    ├── lessons.js           # Learning guide, lesson modal, quiz
     ├── fill-blank.js        # Fill in the blank exercise
     ├── multiple-choice.js   # Multiple choice exercise
     ├── sentence-order.js    # Sentence ordering exercise

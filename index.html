@@ -32,6 +32,7 @@
   <button class="nav-btn" data-game="error-correction">🔍 Error Correction</button>
   <button class="nav-btn" data-game="transformation">🔄 Transformation</button>
   <button class="nav-btn" data-game="matching">🔗 Matching</button>
+  <button class="nav-btn" data-game="learning-guide">📖 Learning Guide</button>
 </nav>
 
 <!-- ═══════════ TOPIC FILTER (shown inside exercises) ═══════════ -->
@@ -258,6 +259,53 @@
   </div>
 </section>
 
+<!-- ═══════════ LEARNING GUIDE ═══════════ -->
+<section class="game-panel" id="panel-learning-guide">
+  <div class="home-container">
+    <h2 class="section-title">📖 Learning Guide</h2>
+    <p class="guide-intro">Your complete roadmap to mastering English grammar! Click on any topic to learn the rules, see examples, and test yourself.</p>
+
+    <!-- Tabs -->
+    <div class="guide-tabs">
+      <button class="guide-tab active" data-tab="lessons">📚 Grammar Lessons</button>
+      <button class="guide-tab" data-tab="tips">💡 Study Tips</button>
+      <button class="guide-tab" data-tab="path">🗺️ Learning Path</button>
+    </div>
+
+    <!-- Lessons Tab -->
+    <div class="guide-content active" id="tab-lessons">
+      <div class="guide-topics-grid" id="guideTopicsGrid"></div>
+    </div>
+
+    <!-- Study Tips Tab -->
+    <div class="guide-content" id="tab-tips">
+      <div class="tips-grid" id="tipsGrid"></div>
+    </div>
+
+    <!-- Learning Path Tab -->
+    <div class="guide-content" id="tab-path">
+      <div class="path-timeline" id="pathTimeline"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ LESSON MODAL ═══════════ -->
+<div class="lesson-modal-overlay" id="lessonModal">
+  <div class="lesson-modal">
+    <button class="modal-close" id="modalClose">&times;</button>
+    <div class="modal-header">
+      <h2 class="modal-title" id="modalTitle"></h2>
+      <p class="modal-intro" id="modalIntro"></p>
+    </div>
+    <div class="modal-tabs">
+      <button class="modal-tab active" data-mtab="lesson">📖 Lesson</button>
+      <button class="modal-tab" data-mtab="quiz">🧩 Quick Quiz</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+    <div class="modal-quiz" id="modalQuiz" style="display:none;"></div>
+  </div>
+</div>
+
 <!-- ═══════════ FOOTER ═══════════ -->
 <footer class="footer">
   <p>Grammar English Kids &copy; 2025 &mdash; Practice makes perfect! 📝</p>
@@ -272,5 +320,6 @@
 <script src="js/error-correction.js"></script>
 <script src="js/transformation.js"></script>
 <script src="js/matching.js"></script>
+<script src="js/lessons.js"></script>
 </body>
 </html>

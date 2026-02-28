@@ -776,3 +776,643 @@ const GRAMMAR_TIPS = {
     { title: 'Infinitive verbs', rule: 'want, decide, hope, promise, plan, offer', example: 'She plans to visit Paris.' },
   ],
 };
+
+// ══════════════════════════════════════════════════════════════
+// GRAMMAR LESSONS – Detailed lessons for each topic
+// ══════════════════════════════════════════════════════════════
+const GRAMMAR_LESSONS = {
+  tenses: {
+    title: 'Tenses – Complete Guide',
+    intro: 'Tenses tell us WHEN an action happens. English has three main time frames: Past, Present, and Future. Each has simple, continuous, and perfect forms.',
+    sections: [
+      {
+        heading: 'Present Simple',
+        explanation: 'Used for <strong>habits, routines, facts, and general truths</strong>. Things that happen regularly or are always true.',
+        formation: [
+          'Affirmative: I/You/We/They + <strong>verb</strong> | He/She/It + <strong>verb-s/es</strong>',
+          'Negative: I/You/We/They + <strong>do not (don\'t)</strong> + verb | He/She/It + <strong>does not (doesn\'t)</strong> + verb',
+          'Question: <strong>Do</strong> + I/you/we/they + verb? | <strong>Does</strong> + he/she/it + verb?'
+        ],
+        examples: ['She <u>goes</u> to school every day.', 'Water <u>boils</u> at 100°C.', 'They <u>don\'t like</u> spinach.', '<u>Does</u> he <u>play</u> tennis?'],
+        signals: ['every day, always, usually, often, sometimes, never, on Mondays'],
+        warnings: ['Don\'t forget the -s/-es for he/she/it: "She go❌ → She goes✅"', 'Use "does" in questions/negatives for he/she/it (not "do")']
+      },
+      {
+        heading: 'Present Continuous',
+        explanation: 'Used for actions happening <strong>right now</strong>, temporary situations, or <strong>future plans</strong>.',
+        formation: [
+          'Affirmative: Subject + <strong>am/is/are</strong> + <strong>verb-ing</strong>',
+          'Negative: Subject + am/is/are + <strong>not</strong> + verb-ing',
+          'Question: <strong>Am/Is/Are</strong> + subject + verb-ing?'
+        ],
+        examples: ['Look! She <u>is dancing</u>.', 'They <u>are studying</u> right now.', 'I <u>am not watching</u> TV.'],
+        signals: ['now, right now, at the moment, look!, listen!, today, this week'],
+        warnings: ['Some verbs are NOT used in continuous: know, like, want, need, believe, understand']
+      },
+      {
+        heading: 'Past Simple',
+        explanation: 'Used for <strong>completed actions in the past</strong>. The action started and finished at a specific time.',
+        formation: [
+          'Affirmative: Subject + <strong>verb-ed</strong> (regular) or <strong>irregular form</strong>',
+          'Negative: Subject + <strong>did not (didn\'t)</strong> + base verb',
+          'Question: <strong>Did</strong> + subject + base verb?'
+        ],
+        examples: ['I <u>visited</u> London last year.', 'She <u>went</u> to the cinema yesterday.', 'They <u>didn\'t play</u> football.'],
+        signals: ['yesterday, last week/month/year, ago, in 2020, when I was young'],
+        warnings: ['Irregular verbs don\'t add -ed: go→went, eat→ate, see→saw, buy→bought', 'In questions and negatives, use "did" + base verb (not past form)']
+      },
+      {
+        heading: 'Present Perfect',
+        explanation: 'Used for actions that started in the past and <strong>connect to now</strong>, or for <strong>life experiences</strong> and <strong>recent completed actions</strong>.',
+        formation: [
+          'Affirmative: Subject + <strong>have/has</strong> + <strong>past participle</strong>',
+          'Negative: Subject + have/has + <strong>not</strong> + past participle',
+          'Question: <strong>Have/Has</strong> + subject + past participle?'
+        ],
+        examples: ['I <u>have visited</u> France three times.', 'She <u>has already eaten</u> lunch.', '<u>Have</u> you ever <u>seen</u> a whale?'],
+        signals: ['already, yet, just, ever, never, since, for, recently, so far'],
+        warnings: ['Use "has" for he/she/it, "have" for I/you/we/they', 'Don\'t use with specific past time: "I have seen it yesterday❌"']
+      },
+      {
+        heading: 'Future Simple',
+        explanation: 'Used for <strong>predictions, promises, spontaneous decisions, and offers</strong> about the future.',
+        formation: [
+          'Affirmative: Subject + <strong>will</strong> + base verb',
+          'Negative: Subject + <strong>will not (won\'t)</strong> + base verb',
+          'Question: <strong>Will</strong> + subject + base verb?'
+        ],
+        examples: ['I <u>will help</u> you.', 'It <u>will rain</u> tomorrow.', 'She <u>won\'t come</u> to the party.'],
+        signals: ['tomorrow, next week/month/year, in the future, I think, probably'],
+        warnings: ['Don\'t use "will" in the if-clause of First Conditional: "If it will rain❌ → If it rains✅"']
+      },
+      {
+        heading: 'Past Continuous',
+        explanation: 'Used for actions that were <strong>in progress at a specific time in the past</strong>, or when one action <strong>interrupted</strong> another.',
+        formation: [
+          'Affirmative: Subject + <strong>was/were</strong> + <strong>verb-ing</strong>',
+          'Negative: Subject + was/were + <strong>not</strong> + verb-ing',
+          'Question: <strong>Was/Were</strong> + subject + verb-ing?'
+        ],
+        examples: ['She <u>was reading</u> when I called.', 'They <u>were playing</u> football at 5 PM.', 'It <u>was raining</u> all morning.'],
+        signals: ['when, while, at that moment, at 5 o\'clock yesterday, all morning'],
+        warnings: ['Use "was" for I/he/she/it, "were" for you/we/they']
+      }
+    ],
+    quiz: [
+      { q: 'She ___ to school every day.', a: 'goes', hint: 'Present Simple – routine' },
+      { q: 'Look! They ___ (play) in the garden.', a: 'are playing', hint: 'Present Continuous – happening now' },
+      { q: 'I ___ (visit) Paris last summer.', a: 'visited', hint: 'Past Simple – last summer' },
+      { q: 'She has ___ (eat) lunch already.', a: 'eaten', hint: 'Present Perfect – past participle' },
+    ]
+  },
+
+  parts: {
+    title: 'Parts of Speech – Complete Guide',
+    intro: 'Every word in English belongs to a PART OF SPEECH. Understanding these helps you build correct sentences.',
+    sections: [
+      {
+        heading: 'Nouns',
+        explanation: 'Words that name a <strong>person, place, thing, animal, or idea</strong>. Nouns are the building blocks of sentences.',
+        formation: ['Common nouns: dog, city, book', 'Proper nouns (capitalized): London, Tom, Monday', 'Countable: apple (apples) | Uncountable: water, music'],
+        examples: ['The <u>dog</u> chased the <u>ball</u>.', '<u>London</u> is a beautiful <u>city</u>.', '<u>Happiness</u> is important.'],
+        signals: [],
+        warnings: ['Proper nouns always start with a capital letter', 'Uncountable nouns don\'t have plural: "informations❌ → information✅"']
+      },
+      {
+        heading: 'Verbs',
+        explanation: 'Words that express an <strong>action</strong> (run, eat) or a <strong>state</strong> (be, feel, know).',
+        formation: ['Action verbs: run, jump, write, cook', 'State verbs: be, know, like, believe', 'Helping verbs: am, is, are, have, do, can, will'],
+        examples: ['She <u>runs</u> every morning.', 'I <u>am</u> a student.', 'He <u>can swim</u> very well.'],
+        signals: [],
+        warnings: ['Every sentence needs at least one verb', 'State verbs usually don\'t use continuous: "I am knowing❌ → I know✅"']
+      },
+      {
+        heading: 'Adjectives',
+        explanation: 'Words that <strong>describe or modify nouns</strong>. They tell us what something is like.',
+        formation: ['Before noun: a <strong>tall</strong> boy', 'After "be": The boy is <strong>tall</strong>', 'Order: opinion → size → age → shape → color → origin → material'],
+        examples: ['She has <u>beautiful</u> eyes.', 'The soup is <u>hot</u>.', 'It was a <u>big, old, red</u> house.'],
+        signals: [],
+        warnings: ['Adjectives don\'t change for plural: "talls boys❌ → tall boys✅"']
+      },
+      {
+        heading: 'Adverbs',
+        explanation: 'Words that describe <strong>verbs, adjectives, or other adverbs</strong>. They tell HOW, WHEN, WHERE, or HOW MUCH.',
+        formation: ['Most: adjective + -ly (quick → quickly)', 'Irregular: good → well, fast → fast, hard → hard', 'Position: usually after the verb or at the end'],
+        examples: ['She sings <u>beautifully</u>.', 'He runs <u>very</u> fast.', 'I <u>always</u> eat breakfast.'],
+        signals: [],
+        warnings: ['Don\'t confuse adjective/adverb: "She sings beautiful❌ → She sings beautifully✅"', '"good" = adjective, "well" = adverb']
+      },
+      {
+        heading: 'Prepositions',
+        explanation: 'Words that show the <strong>relationship</strong> between a noun and other words (position, time, direction).',
+        formation: ['Place: in, on, at, under, behind, between', 'Time: at, on, in, before, after, during', 'Direction: to, into, across, through, towards'],
+        examples: ['The cat is <u>on</u> the table.', 'I wake up <u>at</u> 7 AM.', 'She walked <u>across</u> the bridge.'],
+        signals: [],
+        warnings: ['in + months/years/seasons, on + days/dates, at + times']
+      }
+    ],
+    quiz: [
+      { q: 'What part of speech is "quickly"?', a: 'Adverb', hint: 'Describes how something is done' },
+      { q: 'What part of speech is "beautiful"?', a: 'Adjective', hint: 'Describes a noun' },
+      { q: '"Dog" is a ___.', a: 'Noun', hint: 'Names a thing/animal' },
+    ]
+  },
+
+  structure: {
+    title: 'Sentence Structure – Complete Guide',
+    intro: 'English sentences follow specific patterns. Understanding word order is key to clear communication.',
+    sections: [
+      {
+        heading: 'Basic Sentence Order (SVO)',
+        explanation: 'English follows <strong>Subject + Verb + Object</strong> order. This is the most important rule!',
+        formation: ['Subject (who?) + Verb (does what?) + Object (to what?)', 'Example: She (S) + likes (V) + music (O)'],
+        examples: ['<u>Tom</u> <u>eats</u> <u>an apple</u>.', '<u>They</u> <u>are playing</u> <u>football</u>.', '<u>I</u> <u>have read</u> <u>the book</u>.'],
+        signals: [],
+        warnings: ['Don\'t put the verb before the subject in statements: "Eats Tom❌ → Tom eats✅"']
+      },
+      {
+        heading: 'Negative Sentences',
+        explanation: 'Add <strong>do/does/did + not</strong> before the base verb. With "be" verbs, add "not" after.',
+        formation: ['Present: S + do/does + not + verb', 'Past: S + did + not + verb', 'With "be": S + am/is/are + not'],
+        examples: ['She <u>does not like</u> fish.', 'They <u>didn\'t go</u> to school.', 'I <u>am not</u> hungry.'],
+        signals: [],
+        warnings: ['doesn\'t/didn\'t + base verb (no -s, no -ed): "She doesn\'t likes❌ → She doesn\'t like✅"']
+      },
+      {
+        heading: 'Questions',
+        explanation: 'Invert the auxiliary verb and subject. For Wh-questions, add the question word first.',
+        formation: ['Yes/No: Auxiliary + S + verb? (Do you like...?)', 'Wh-: Wh-word + auxiliary + S + verb? (Where do you live?)', 'With "be": Am/Is/Are + S...? (Is she happy?)'],
+        examples: ['<u>Do</u> you <u>like</u> pizza?', '<u>Where</u> does she <u>live</u>?', '<u>Is</u> he <u>coming</u>?', '<u>What</u> did you <u>buy</u>?'],
+        signals: ['Who, What, Where, When, Why, How, Which'],
+        warnings: ['Don\'t use "do/does" with "be": "Do you are❌ → Are you✅"']
+      },
+      {
+        heading: 'Sentence Types',
+        explanation: 'There are 4 types of sentences based on their <strong>purpose</strong>.',
+        formation: ['Declarative: Makes a statement (ends with .)', 'Interrogative: Asks a question (ends with ?)', 'Imperative: Gives a command (no subject needed)', 'Exclamatory: Expresses strong feeling (ends with !)'],
+        examples: ['The sky is blue. (declarative)', 'Is the sky blue? (interrogative)', 'Close the door. (imperative)', 'What a beautiful day! (exclamatory)'],
+        signals: [],
+        warnings: []
+      }
+    ],
+    quiz: [
+      { q: 'What is the basic English word order?', a: 'Subject + Verb + Object', hint: 'SVO' },
+      { q: '"Close the window!" is what type?', a: 'Imperative', hint: 'Gives a command' },
+    ]
+  },
+
+  articles: {
+    title: 'Articles & Determiners – Complete Guide',
+    intro: 'Articles (a, an, the) and determiners (some, any, this, that) come BEFORE nouns to give them meaning.',
+    sections: [
+      {
+        heading: 'A / An (Indefinite Articles)',
+        explanation: 'Used for <strong>non-specific, singular countable nouns</strong> mentioned for the first time.',
+        formation: ['<strong>a</strong> + consonant sound: a cat, a house, a university (/juː/)', '<strong>an</strong> + vowel sound: an apple, an hour (/aʊ/), an umbrella'],
+        examples: ['I saw <u>a</u> dog in the park.', 'She is <u>an</u> engineer.', 'He wants <u>a</u> new phone.'],
+        signals: [],
+        warnings: ['It\'s about the SOUND, not the letter: "a university" (starts with /j/), "an hour" (silent h)', 'Don\'t use a/an with uncountable nouns: "a water❌ → some water✅"']
+      },
+      {
+        heading: 'The (Definite Article)',
+        explanation: 'Used when the noun is <strong>specific, already known, or unique</strong>.',
+        formation: ['Specific: <strong>the</strong> book I told you about', 'Unique: <strong>the</strong> sun, <strong>the</strong> moon, <strong>the</strong> president', 'Superlative: <strong>the</strong> best, <strong>the</strong> tallest'],
+        examples: ['<u>The</u> sun rises in the east.', 'Can you close <u>the</u> door?', 'She is <u>the</u> best student.'],
+        signals: [],
+        warnings: ['No "the" with general plurals: "The dogs are animals❌ → Dogs are animals✅"', 'No "the" before meals, sports, languages (usually): "the breakfast❌ → breakfast✅"']
+      },
+      {
+        heading: 'Some / Any',
+        explanation: '<strong>Some</strong> is for positive sentences and offers/requests. <strong>Any</strong> is for negatives and questions.',
+        formation: ['Positive: I have <strong>some</strong> books.', 'Negative: I don\'t have <strong>any</strong> books.', 'Question: Do you have <strong>any</strong> books?', 'Offer: Would you like <strong>some</strong> tea?'],
+        examples: ['There are <u>some</u> apples on the table.', 'I don\'t have <u>any</u> money.', 'Would you like <u>some</u> cake?'],
+        signals: [],
+        warnings: ['Use "some" in questions when offering: "Would you like some tea?" (not "any")']
+      },
+      {
+        heading: 'This / That / These / Those',
+        explanation: 'Demonstratives – point to specific things based on <strong>distance and number</strong>.',
+        formation: ['Near + singular: <strong>this</strong>', 'Near + plural: <strong>these</strong>', 'Far + singular: <strong>that</strong>', 'Far + plural: <strong>those</strong>'],
+        examples: ['<u>This</u> book is mine. (near, singular)', '<u>Those</u> cars are fast. (far, plural)'],
+        signals: [],
+        warnings: []
+      }
+    ],
+    quiz: [
+      { q: '"___ apple a day keeps the doctor away."', a: 'An', hint: 'Vowel sound' },
+      { q: '"I don\'t have ___ friends here."', a: 'any', hint: 'Negative sentence' },
+    ]
+  },
+
+  comparisons: {
+    title: 'Comparisons – Complete Guide',
+    intro: 'We use comparative and superlative adjectives to compare things. The rules depend on the length of the adjective.',
+    sections: [
+      {
+        heading: 'Comparative (-er / more)',
+        explanation: 'Compare <strong>TWO things</strong>. Short adjectives add -er, long adjectives use "more".',
+        formation: [
+          'Short (1-2 syllables): adj + <strong>-er + than</strong> → taller than, bigger than',
+          'Long (3+ syllables): <strong>more</strong> + adj + than → more beautiful than',
+          'Spelling: big → bigg<strong>er</strong> (double consonant), happy → happi<strong>er</strong> (y→i)'
+        ],
+        examples: ['She is <u>taller than</u> her sister.', 'This book is <u>more interesting than</u> that one.', 'Dogs are <u>friendlier than</u> cats.'],
+        signals: ['than'],
+        warnings: ['Don\'t use "more" with short adjectives: "more tall❌ → taller✅"', 'Don\'t add -er to long adjectives: "beautifuler❌ → more beautiful✅"']
+      },
+      {
+        heading: 'Superlative (-est / most)',
+        explanation: 'Compare <strong>THREE or more things</strong>. Used with "the".',
+        formation: [
+          'Short: the + adj + <strong>-est</strong> → the tallest, the biggest',
+          'Long: <strong>the most</strong> + adj → the most beautiful, the most interesting'
+        ],
+        examples: ['He is <u>the tallest</u> boy in class.', 'This is <u>the most expensive</u> phone.', 'She is <u>the happiest</u> person I know.'],
+        signals: ['in the class, of all, ever'],
+        warnings: ['Always use "the" before superlatives']
+      },
+      {
+        heading: 'Irregular Comparisons',
+        explanation: 'Some adjectives have <strong>completely different forms</strong> for comparative and superlative.',
+        formation: [
+          'good → <strong>better</strong> → <strong>the best</strong>',
+          'bad → <strong>worse</strong> → <strong>the worst</strong>',
+          'far → <strong>farther/further</strong> → <strong>the farthest/furthest</strong>',
+          'little → <strong>less</strong> → <strong>the least</strong>',
+          'much/many → <strong>more</strong> → <strong>the most</strong>'
+        ],
+        examples: ['This cake is <u>better</u> than that one.', 'It was <u>the worst</u> day ever.'],
+        signals: [],
+        warnings: ['Never say "gooder, badder, more good, most bad"']
+      },
+      {
+        heading: 'Equal Comparison (as...as)',
+        explanation: 'Show that two things are <strong>the same</strong> in some way.',
+        formation: ['Positive: as + adj + as', 'Negative: not as + adj + as'],
+        examples: ['She is <u>as tall as</u> her brother.', 'This test is <u>not as hard as</u> the last one.'],
+        signals: [],
+        warnings: ['Use base adjective (not comparative): "as taller as❌ → as tall as✅"']
+      }
+    ],
+    quiz: [
+      { q: 'Comparative of "good":', a: 'better', hint: 'Irregular' },
+      { q: 'Superlative of "beautiful":', a: 'the most beautiful', hint: 'Long adjective → the most' },
+    ]
+  },
+
+  modals: {
+    title: 'Modal Verbs – Complete Guide',
+    intro: 'Modals are special helping verbs that express ability, permission, obligation, advice, and possibility. They are always followed by a BASE VERB (no "to", no -s).',
+    sections: [
+      {
+        heading: 'Can / Could',
+        explanation: '<strong>Can</strong> = present ability, permission, requests. <strong>Could</strong> = past ability, polite requests, possibility.',
+        formation: ['S + can/could + <strong>base verb</strong> (no "to"!)', 'Negative: can\'t / couldn\'t'],
+        examples: ['I <u>can</u> swim. (ability)', '<u>Can</u> I go? (permission)', '<u>Could</u> you help me? (polite request)', 'He <u>could</u> read when he was 4. (past ability)'],
+        signals: [],
+        warnings: ['No "to" after can: "I can to swim❌ → I can swim✅"', 'No -s: "She cans❌ → She can✅"']
+      },
+      {
+        heading: 'Must / Have to',
+        explanation: '<strong>Must</strong> = strong obligation, prohibition, certainty. <strong>Have to</strong> = external obligation.',
+        formation: ['S + must + base verb', 'Must not (mustn\'t) = prohibition', 'Don\'t have to = not necessary'],
+        examples: ['You <u>must</u> wear a seatbelt. (obligation)', 'You <u>must not</u> cheat. (prohibition)', 'You <u>don\'t have to</u> come. (optional)'],
+        signals: [],
+        warnings: ['"Must not" ≠ "don\'t have to"! Must not = forbidden, don\'t have to = not necessary']
+      },
+      {
+        heading: 'Should / Ought to',
+        explanation: 'Express <strong>advice and recommendations</strong>. "Should" is more common.',
+        formation: ['S + should + base verb', 'Negative: shouldn\'t'],
+        examples: ['You <u>should</u> eat more vegetables.', 'She <u>shouldn\'t</u> stay up late.'],
+        signals: [],
+        warnings: []
+      },
+      {
+        heading: 'May / Might',
+        explanation: '<strong>May</strong> = formal permission, possibility. <strong>Might</strong> = weaker possibility.',
+        formation: ['S + may/might + base verb'],
+        examples: ['<u>May</u> I come in? (formal permission)', 'It <u>might</u> rain later. (possibility)', 'She <u>may</u> be at home. (possibility)'],
+        signals: [],
+        warnings: ['May is more formal than can for permission']
+      }
+    ],
+    quiz: [
+      { q: 'Which modal for strong obligation?', a: 'must', hint: 'Stronger than "should"' },
+      { q: '"___ I borrow your pen?" (polite)', a: 'May / Could', hint: 'Formal permission' },
+    ]
+  },
+
+  conditionals: {
+    title: 'Conditionals – Complete Guide',
+    intro: 'Conditional sentences describe "if" situations. They have an IF-CLAUSE (condition) and a MAIN CLAUSE (result).',
+    sections: [
+      {
+        heading: 'Zero Conditional',
+        explanation: 'For <strong>general truths, scientific facts, and things that are always true</strong>.',
+        formation: ['If + <strong>present simple</strong>, <strong>present simple</strong>', 'Can also use "when" instead of "if"'],
+        examples: ['If you <u>heat</u> water to 100°C, it <u>boils</u>.', 'If you <u>mix</u> red and blue, you <u>get</u> purple.', 'When it <u>rains</u>, the grass <u>gets</u> wet.'],
+        signals: ['always, every time, when'],
+        warnings: ['Both clauses use PRESENT SIMPLE']
+      },
+      {
+        heading: 'First Conditional',
+        explanation: 'For <strong>real/likely situations in the future</strong>. Something that will probably happen.',
+        formation: ['If + <strong>present simple</strong>, <strong>will + base verb</strong>', 'The if-clause uses present (NOT future)'],
+        examples: ['If it <u>rains</u>, I <u>will take</u> an umbrella.', 'If she <u>studies</u>, she <u>will pass</u>.', 'I <u>won\'t go</u> if it <u>is</u> too cold.'],
+        signals: ['probably, maybe, tomorrow, next week'],
+        warnings: ['NEVER use "will" in the if-clause: "If it will rain❌ → If it rains✅"']
+      },
+      {
+        heading: 'Second Conditional',
+        explanation: 'For <strong>unreal, imaginary, or unlikely situations in the present/future</strong>.',
+        formation: ['If + <strong>past simple</strong>, <strong>would + base verb</strong>', 'Special: use "were" for all subjects (not "was")'],
+        examples: ['If I <u>were</u> rich, I <u>would travel</u> the world.', 'If he <u>had</u> wings, he <u>would fly</u>.', 'If I <u>were</u> you, I <u>would apologize</u>.'],
+        signals: ['imagine, if only, I wish'],
+        warnings: ['"If I was❌ → If I were✅" (subjunctive mood)', 'NEVER use "would" in the if-clause: "If I would be❌ → If I were✅"']
+      }
+    ],
+    quiz: [
+      { q: '"If you heat ice, it ___." (Zero)', a: 'melts', hint: 'Present simple in both clauses' },
+      { q: '"If it rains, I ___ stay home." (First)', a: 'will', hint: 'will + base verb' },
+      { q: '"If I ___ you, I would study more." (Second)', a: 'were', hint: 'Subjunctive – always "were"' },
+    ]
+  },
+
+  passive: {
+    title: 'Passive Voice – Complete Guide',
+    intro: 'In passive voice, the OBJECT of the action becomes the SUBJECT. We use passive when the action is more important than who does it.',
+    sections: [
+      {
+        heading: 'Active vs Passive',
+        explanation: '<strong>Active:</strong> Subject does the action. <strong>Passive:</strong> Subject receives the action.',
+        formation: ['Active: Tom (subject) wrote (verb) the letter (object).', 'Passive: The letter (subject) was written (verb) by Tom (agent).', 'Formula: Object → Subject + <strong>be + past participle</strong> + by + Agent'],
+        examples: ['Active: She <u>cleans</u> the house. → Passive: The house <u>is cleaned</u> by her.', 'Active: They <u>built</u> a bridge. → Passive: A bridge <u>was built</u> by them.'],
+        signals: [],
+        warnings: ['The agent (by...) can be omitted if unknown or obvious']
+      },
+      {
+        heading: 'Passive in Different Tenses',
+        explanation: 'Change the form of "be" to match the tense. The main verb always stays as <strong>past participle</strong>.',
+        formation: [
+          'Present Simple: is/are + past participle',
+          'Past Simple: was/were + past participle',
+          'Present Perfect: has/have been + past participle',
+          'Present Continuous: is/are being + past participle',
+          'Future: will be + past participle'
+        ],
+        examples: ['English <u>is spoken</u> worldwide. (Present)', 'The cake <u>was baked</u> yesterday. (Past)', 'The work <u>has been finished</u>. (Perfect)', 'A school <u>is being built</u>. (Continuous)', 'The project <u>will be completed</u> soon. (Future)'],
+        signals: ['by (agent), it is said that, it is believed that'],
+        warnings: ['Don\'t forget the "be" verb: "The letter written❌ → The letter was written✅"', 'Use past participle (not past simple): "was wrote❌ → was written✅"']
+      }
+    ],
+    quiz: [
+      { q: '"Tom wrote the letter." → Passive:', a: 'The letter was written by Tom.', hint: 'was + past participle' },
+      { q: '"English ___ spoken worldwide."', a: 'is', hint: 'Present Simple Passive' },
+    ]
+  },
+
+  prepositions: {
+    title: 'Prepositions – Complete Guide',
+    intro: 'Prepositions are small words that show relationships between nouns and other parts of the sentence. They indicate time, place, direction, and more.',
+    sections: [
+      {
+        heading: 'Prepositions of Time',
+        explanation: 'Show <strong>when</strong> something happens.',
+        formation: [
+          '<strong>at</strong> = specific time: at 9 AM, at noon, at midnight, at Christmas',
+          '<strong>on</strong> = days/dates: on Monday, on July 4th, on my birthday',
+          '<strong>in</strong> = longer periods: in June, in 2020, in summer, in the morning',
+          '<strong>for</strong> = duration: for 2 hours, for a week',
+          '<strong>since</strong> = starting point: since 2020, since Monday',
+          '<strong>by</strong> = deadline: by tomorrow, by 5 PM'
+        ],
+        examples: ['I wake up <u>at</u> 7 AM.', 'She was born <u>on</u> March 15th.', 'We go swimming <u>in</u> summer.', 'He waited <u>for</u> 30 minutes.'],
+        signals: [],
+        warnings: ['"for" + duration, "since" + point in time. Don\'t mix them!', 'at night (NOT "in the night"), in the morning/afternoon/evening']
+      },
+      {
+        heading: 'Prepositions of Place',
+        explanation: 'Show <strong>where</strong> something or someone is.',
+        formation: [
+          '<strong>in</strong> = inside: in the box, in the room, in London',
+          '<strong>on</strong> = surface: on the table, on the wall, on the floor',
+          '<strong>at</strong> = specific point: at the door, at the bus stop, at school',
+          '<strong>under</strong> = below: under the bed, under the bridge',
+          '<strong>between</strong> = in the middle of two: between the two buildings',
+          '<strong>next to / beside</strong> = at the side: next to the bank'
+        ],
+        examples: ['The book is <u>on</u> the table.', 'She is <u>in</u> the kitchen.', 'I\'ll meet you <u>at</u> the station.', 'The cat is <u>under</u> the chair.'],
+        signals: [],
+        warnings: ['in + city/country: "in London"; at + specific place: "at the airport"']
+      },
+      {
+        heading: 'Prepositions of Movement',
+        explanation: 'Show <strong>direction</strong> or where someone/something is going.',
+        formation: [
+          '<strong>to</strong> = destination: go to school, walk to the park',
+          '<strong>into</strong> = entering inside: go into the room',
+          '<strong>out of</strong> = leaving: come out of the building',
+          '<strong>across</strong> = from one side to another: walk across the bridge',
+          '<strong>through</strong> = in and out: drive through the tunnel',
+          '<strong>along</strong> = following a line: walk along the river'
+        ],
+        examples: ['She walked <u>to</u> school.', 'The cat jumped <u>into</u> the box.', 'He swam <u>across</u> the river.'],
+        signals: [],
+        warnings: ['"to" for destination (go to school), "at" for location (at school)']
+      }
+    ],
+    quiz: [
+      { q: 'She was born ___ March 15th.', a: 'on', hint: 'Specific date' },
+      { q: 'I have been waiting ___ two hours.', a: 'for', hint: 'Duration' },
+      { q: 'The book is ___ the table.', a: 'on', hint: 'Surface' },
+    ]
+  },
+
+  conjunctions: {
+    title: 'Conjunctions – Complete Guide',
+    intro: 'Conjunctions are words that CONNECT words, phrases, or clauses. They make sentences more complex and interesting.',
+    sections: [
+      {
+        heading: 'Coordinating Conjunctions (FANBOYS)',
+        explanation: 'Connect <strong>two equal parts</strong> (word + word, clause + clause). Remember <strong>FANBOYS</strong>!',
+        formation: [
+          '<strong>F</strong>or = reason (formal)',
+          '<strong>A</strong>nd = addition',
+          '<strong>N</strong>or = negative addition',
+          '<strong>B</strong>ut = contrast',
+          '<strong>O</strong>r = choice/alternative',
+          '<strong>Y</strong>et = contrast (similar to "but")',
+          '<strong>S</strong>o = result/consequence'
+        ],
+        examples: ['I like tea <u>and</u> coffee.', 'She was tired, <u>but</u> she kept working.', 'Do you want tea <u>or</u> coffee?', 'He was sick, <u>so</u> he stayed home.'],
+        signals: [],
+        warnings: ['Use a comma before FANBOYS when connecting two independent clauses']
+      },
+      {
+        heading: 'Subordinating Conjunctions',
+        explanation: 'Connect a <strong>main clause with a dependent clause</strong>. The dependent clause cannot stand alone.',
+        formation: [
+          '<strong>because</strong> = reason',
+          '<strong>although / though / even though</strong> = contrast/concession',
+          '<strong>when / while / as</strong> = time',
+          '<strong>if / unless</strong> = condition',
+          '<strong>until / before / after</strong> = time sequence',
+          '<strong>so that</strong> = purpose'
+        ],
+        examples: ['He stayed home <u>because</u> he was sick.', '<u>Although</u> it rained, we went out.', 'I\'ll wait <u>until</u> you\'re ready.', '<u>While</u> I was cooking, she was cleaning.'],
+        signals: [],
+        warnings: ['Don\'t use "because" and "so" together: "Because he was sick, so he stayed home❌"', 'Don\'t use "although" and "but" together']
+      },
+      {
+        heading: 'Correlative Conjunctions',
+        explanation: 'Work in <strong>pairs</strong> to connect equal parts.',
+        formation: [
+          '<strong>both...and</strong> = two things together',
+          '<strong>either...or</strong> = one of two choices',
+          '<strong>neither...nor</strong> = not one, not the other',
+          '<strong>not only...but also</strong> = emphasis on two things'
+        ],
+        examples: ['<u>Both</u> Tom <u>and</u> Jerry are funny.', '<u>Either</u> you go <u>or</u> I go.', 'She is <u>not only</u> smart <u>but also</u> kind.'],
+        signals: [],
+        warnings: ['Make sure both parts are grammatically parallel']
+      }
+    ],
+    quiz: [
+      { q: 'FANBOYS stands for?', a: 'For, And, Nor, But, Or, Yet, So', hint: '7 coordinating conjunctions' },
+      { q: '"___ it was cold, she went out."', a: 'Although', hint: 'Contrast/concession' },
+    ]
+  },
+
+  relatives: {
+    title: 'Relative Clauses – Complete Guide',
+    intro: 'Relative clauses give EXTRA INFORMATION about a noun. They start with relative pronouns (who, which, that, whose) or relative adverbs (where, when).',
+    sections: [
+      {
+        heading: 'Relative Pronouns',
+        explanation: 'Words that introduce relative clauses and refer back to a noun.',
+        formation: [
+          '<strong>who</strong> = people (subject): The boy <em>who</em> lives here...',
+          '<strong>whom</strong> = people (object, formal): The man <em>whom</em> I met...',
+          '<strong>which</strong> = things/animals: The book <em>which</em> I read...',
+          '<strong>that</strong> = people or things (informal): The girl <em>that</em> won...',
+          '<strong>whose</strong> = possession: The man <em>whose</em> car broke down...'
+        ],
+        examples: ['The girl <u>who</u> sits next to me is kind.', 'The book <u>which</u> I bought was expensive.', 'The student <u>whose</u> bag was stolen called the police.'],
+        signals: [],
+        warnings: ['Don\'t use "which" for people: "The boy which❌ → The boy who✅"', '"Whose" is NOT the same as "who\'s" (who is)']
+      },
+      {
+        heading: 'Relative Adverbs',
+        explanation: 'Introduce relative clauses about <strong>places, times, and reasons</strong>.',
+        formation: [
+          '<strong>where</strong> = place: This is the park <em>where</em> we met.',
+          '<strong>when</strong> = time: I remember the day <em>when</em> we first met.',
+          '<strong>why</strong> = reason: That\'s the reason <em>why</em> I left.'
+        ],
+        examples: ['This is the school <u>where</u> I studied.', 'I\'ll never forget the day <u>when</u> we graduated.', 'Tell me the reason <u>why</u> you\'re late.'],
+        signals: [],
+        warnings: ['"Where" replaces "in/at which": "The city where I live" = "The city in which I live"']
+      },
+      {
+        heading: 'Defining vs Non-Defining',
+        explanation: '<strong>Defining:</strong> Essential information (no commas). <strong>Non-defining:</strong> Extra information (with commas).',
+        formation: [
+          'Defining: The man <em>who called you</em> is my father. (which man? → essential)',
+          'Non-defining: My father<em>, who is 50,</em> is a doctor. (extra info → with commas)'
+        ],
+        examples: ['The book <u>that I bought</u> is great. (defining – which book?)', 'London<u>, which is the capital of England,</u> is huge. (non-defining – extra fact)'],
+        signals: [],
+        warnings: ['Don\'t use "that" in non-defining clauses: "London, that is...❌ → London, which is...✅"']
+      }
+    ],
+    quiz: [
+      { q: '"The boy ___ lives here is kind." (people)', a: 'who', hint: 'For people = who' },
+      { q: '"The book ___ I read was great." (thing)', a: 'which', hint: 'For things = which/that' },
+      { q: '"The girl ___ bag was stolen cried." (possession)', a: 'whose', hint: 'Possession = whose' },
+    ]
+  },
+
+  gerunds: {
+    title: 'Gerunds & Infinitives – Complete Guide',
+    intro: 'Some verbs are followed by a GERUND (verb-ing), some by an INFINITIVE (to + verb), and some can take both with different meanings.',
+    sections: [
+      {
+        heading: 'Gerunds (verb-ing)',
+        explanation: 'A verb form ending in <strong>-ing</strong> that functions as a <strong>noun</strong>.',
+        formation: [
+          'As subject: <strong>Swimming</strong> is fun.',
+          'After certain verbs: I enjoy <strong>reading</strong>.',
+          'After prepositions: I\'m good at <strong>cooking</strong>.',
+          'Common gerund verbs: enjoy, avoid, mind, keep, finish, suggest, consider, practice, quit, miss'
+        ],
+        examples: ['<u>Running</u> is good exercise.', 'She enjoys <u>cooking</u>.', 'He avoids <u>eating</u> junk food.', 'I\'m interested in <u>learning</u> French.'],
+        signals: ['enjoy, avoid, mind, keep, finish, suggest, can\'t help, practice, consider'],
+        warnings: ['After prepositions, always use gerund: "good at cooking" (not "good at to cook")']
+      },
+      {
+        heading: 'Infinitives (to + verb)',
+        explanation: 'The base form of a verb with <strong>"to"</strong> before it.',
+        formation: [
+          'After certain verbs: I want <strong>to go</strong>.',
+          'Express purpose: I came <strong>to help</strong>.',
+          'After adjectives: It\'s easy <strong>to learn</strong>.',
+          'Common infinitive verbs: want, need, decide, hope, plan, promise, offer, agree, refuse, learn, seem'
+        ],
+        examples: ['I want <u>to learn</u> English.', 'She decided <u>to leave</u>.', 'He promised <u>to come</u>.', 'It\'s important <u>to study</u>.'],
+        signals: ['want, need, decide, hope, plan, promise, agree, refuse, learn, offer'],
+        warnings: ['After modals, use base verb WITHOUT "to": "I can to swim❌ → I can swim✅"']
+      },
+      {
+        heading: 'Verbs That Take Both (Different Meaning)',
+        explanation: 'Some verbs change meaning depending on whether they\'re followed by gerund or infinitive.',
+        formation: [
+          '<strong>stop + gerund</strong> = quit doing: He stopped smoking. (He quit.)',
+          '<strong>stop + infinitive</strong> = pause to do: He stopped to smoke. (He paused.)',
+          '<strong>remember + gerund</strong> = remember past action: I remember meeting her.',
+          '<strong>remember + infinitive</strong> = remember to do: Remember to call me.',
+          '<strong>try + gerund</strong> = experiment: Try adding sugar.',
+          '<strong>try + infinitive</strong> = attempt: Try to open the door.'
+        ],
+        examples: ['He <u>stopped smoking</u>. (quit the habit)', 'He <u>stopped to smoke</u>. (paused to have a cigarette)', 'I <u>remember locking</u> the door. (I have the memory)', '<u>Remember to lock</u> the door. (Don\'t forget)'],
+        signals: ['stop, remember, forget, try, regret'],
+        warnings: ['Pay attention to the meaning difference – it can change the whole sentence!']
+      }
+    ],
+    quiz: [
+      { q: '"She enjoys ___ (read) books."', a: 'reading', hint: 'enjoy + gerund' },
+      { q: '"I want ___ (go) home."', a: 'to go', hint: 'want + infinitive' },
+      { q: '"He stopped ___ (smoke)." (he quit)', a: 'smoking', hint: 'stop + gerund = quit' },
+    ]
+  }
+};
+
+// ── Study Tips ──
+const STUDY_TIPS = [
+  { icon: '📝', title: 'Write It Down', text: 'Write example sentences for each grammar rule. The act of writing helps your brain remember better than just reading.' },
+  { icon: '🗣️', title: 'Say It Out Loud', text: 'Read grammar rules and examples aloud. Hearing yourself say correct sentences helps build muscle memory.' },
+  { icon: '🎯', title: 'Focus on One Topic', text: 'Don\'t try to learn everything at once. Master one grammar topic before moving to the next.' },
+  { icon: '❌', title: 'Learn from Mistakes', text: 'When you get an answer wrong, read the explanation carefully. Understanding WHY you were wrong is the fastest way to improve.' },
+  { icon: '📖', title: 'Read in English', text: 'Reading stories, articles, or comics in English helps you see grammar in real context. Underline patterns you recognize.' },
+  { icon: '🔄', title: 'Practice Daily', text: 'Even 10-15 minutes of grammar practice every day is better than 2 hours once a week. Consistency is key!' },
+  { icon: '🎮', title: 'Make It Fun', text: 'Use this website\'s games! Try different exercise types. Challenge yourself to beat your score.' },
+  { icon: '📊', title: 'Track Your Progress', text: 'Notice which topics you find easy and which are hard. Spend more time on your weak areas.' },
+  { icon: '🤝', title: 'Teach Someone', text: 'Try explaining a grammar rule to a friend or family member. Teaching is the best way to truly understand something.' },
+  { icon: '🌟', title: 'Use It in Real Life', text: 'Try to use new grammar rules when writing messages, emails, or speaking. Real practice makes perfect!' },
+];
+
+// ── Learning Path (progressive difficulty) ──
+const LEARNING_PATH = [
+  { step: 1, level: 'Beginner', topics: ['parts', 'articles'], description: 'Start with the building blocks: learn parts of speech and how to use articles correctly.', color: '#4CAF50' },
+  { step: 2, level: 'Beginner', topics: ['structure'], description: 'Learn how to build sentences: subject-verb-object order, negatives, and questions.', color: '#4CAF50' },
+  { step: 3, level: 'Elementary', topics: ['tenses'], description: 'Master verb tenses: Present Simple, Present Continuous, Past Simple, and Future.', color: '#2196F3' },
+  { step: 4, level: 'Elementary', topics: ['prepositions'], description: 'Learn prepositions of time, place, and movement to add detail to your sentences.', color: '#2196F3' },
+  { step: 5, level: 'Intermediate', topics: ['comparisons'], description: 'Compare things using comparative, superlative, and equal comparison forms.', color: '#FF9800' },
+  { step: 6, level: 'Intermediate', topics: ['conjunctions'], description: 'Connect your ideas with coordinating and subordinating conjunctions.', color: '#FF9800' },
+  { step: 7, level: 'Intermediate', topics: ['modals'], description: 'Express ability, obligation, advice, permission, and possibility with modal verbs.', color: '#FF9800' },
+  { step: 8, level: 'Upper-Intermediate', topics: ['conditionals'], description: 'Learn to express conditions and hypothetical situations with if-clauses.', color: '#E91E63' },
+  { step: 9, level: 'Upper-Intermediate', topics: ['passive'], description: 'Transform sentences from active to passive voice across different tenses.', color: '#E91E63' },
+  { step: 10, level: 'Upper-Intermediate', topics: ['relatives'], description: 'Add detail to nouns with relative clauses using who, which, that, whose, where.', color: '#E91E63' },
+  { step: 11, level: 'Advanced', topics: ['gerunds'], description: 'Master gerunds and infinitives – know which verbs take which form.', color: '#9C27B0' },
+  { step: 12, level: 'Advanced', topics: ['tenses', 'conditionals', 'passive'], description: 'Review and combine all topics. Practice mixed exercises for fluency!', color: '#9C27B0' },
+];
