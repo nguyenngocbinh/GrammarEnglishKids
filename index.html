@@ -306,6 +306,65 @@
   </div>
 </div>
 
+<!-- ═══════════ FLOATING DICTIONARY WIDGET ═══════════ -->
+<button class="dict-fab" id="dictFab" title="Tra cứu từ điển">📖</button>
+<div class="dict-widget" id="dictWidget">
+  <div class="dict-header">
+    <h3>📖 Tra cứu từ điển</h3>
+    <button class="dict-close" id="dictClose">&times;</button>
+  </div>
+
+  <!-- Search -->
+  <div class="dict-search">
+    <input type="text" id="dictInput" class="dict-input" placeholder="Gõ từ tiếng Anh..." autocomplete="off">
+    <button class="dict-speak-btn" id="dictSpeak" title="Phát âm">🔊</button>
+  </div>
+
+  <!-- Quick lookup buttons -->
+  <div class="dict-buttons">
+    <button class="dict-btn dict-btn-google" id="dictGoogle">
+      <span class="dict-btn-icon">🌐</span> Google Translate
+    </button>
+    <button class="dict-btn dict-btn-oxford" id="dictOxford">
+      <span class="dict-btn-icon">📕</span> Oxford Learner
+    </button>
+  </div>
+
+  <!-- Tabs: iframe / history / suggestions -->
+  <div class="dict-tabs">
+    <button class="dict-tab active" data-dtab="result">💻 Kết quả</button>
+    <button class="dict-tab" data-dtab="history">📜 Lịch sử</button>
+    <button class="dict-tab" data-dtab="suggest">💡 Gợi ý</button>
+  </div>
+
+  <!-- Result iframe -->
+  <div class="dict-panel active" id="dpanel-result">
+    <div class="dict-iframe-wrap">
+      <iframe id="dictIframe" class="dict-iframe" src="about:blank"></iframe>
+      <div class="dict-iframe-fallback" id="dictFallback" style="display:none;">
+        <p>⚠️ Trang này không cho phép nhúng iframe.</p>
+        <a id="dictFallbackLink" href="#" target="_blank" class="dict-btn dict-btn-google">🔗 Mở trong tab mới</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- History -->
+  <div class="dict-panel" id="dpanel-history">
+    <div class="dict-history-list" id="dictHistoryList">
+      <p class="dict-empty">Chưa có lịch sử tra cứu</p>
+    </div>
+    <button class="dict-clear-history" id="dictClearHistory">🗑️ Xóa lịch sử</button>
+  </div>
+
+  <!-- Topic suggestions -->
+  <div class="dict-panel" id="dpanel-suggest">
+    <div class="dict-suggest-topics" id="dictSuggestTopics"></div>
+    <div class="dict-suggest-words" id="dictSuggestWords">
+      <p class="dict-empty">Chọn topic để xem gợi ý từ vựng</p>
+    </div>
+  </div>
+</div>
+
 <!-- ═══════════ FOOTER ═══════════ -->
 <footer class="footer">
   <p>Grammar English Kids &copy; 2025 &mdash; Practice makes perfect! 📝</p>
@@ -321,5 +380,6 @@
 <script src="js/transformation.js"></script>
 <script src="js/matching.js"></script>
 <script src="js/lessons.js"></script>
+<script src="js/dictionary.js"></script>
 </body>
 </html>

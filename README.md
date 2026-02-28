@@ -37,6 +37,10 @@ An interactive, kid-friendly website for children aged **10+** to practice Engli
 - 💡 **Study Tips** – 10 practical tips for effective grammar learning
 - 🗺️ **Learning Path** – Progressive roadmap from Beginner to Advanced (12 steps)
 - 🧩 **Quick Quiz** – Interactive mini-quizzes inside each lesson modal
+- 📖 **Dictionary Widget** – Floating lookup tool with Google Translate & Oxford Learner's Dictionary
+- 🔊 **Pronunciation** – Instant pronunciation via Web Speech API
+- 📜 **Search History** – Recently looked-up words saved locally
+- 💡 **Word Suggestions** – Vocabulary suggestions per grammar topic
 - 🎯 Topic filtering – practice specific grammar areas
 - 📊 Score tracking per exercise
 - 💡 Hints and explanations
@@ -72,6 +76,7 @@ GrammarEnglishKids/
     ├── data.js              # All grammar exercise data + lessons
     ├── main.js              # Navigation, utilities, topic filter
     ├── lessons.js           # Learning guide, lesson modal, quiz
+    ├── dictionary.js        # Floating dictionary widget
     ├── fill-blank.js        # Fill in the blank exercise
     ├── multiple-choice.js   # Multiple choice exercise
     ├── sentence-order.js    # Sentence ordering exercise
