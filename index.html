@@ -1,385 +1,132 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Grammar English Kids – Learn English Grammar</title>
+  <title>Grammar English Kids  Learning Roadmap</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<!-- ═══════════ HERO / HEADER ═══════════ -->
-<header class="hero" id="hero">
-  <div class="floating-shapes">
-    <span class="shape shape-circle"></span>
-    <span class="shape shape-square"></span>
-    <span class="shape shape-triangle"></span>
-    <span class="shape shape-circle2"></span>
-    <span class="shape shape-star"></span>
+<!-- LOGIN SCREEN -->
+<div id="screenLogin" class="screen active">
+  <div class="login-bg">
+    <span class="bubble b1"></span><span class="bubble b2"></span>
+    <span class="bubble b3"></span><span class="bubble b4"></span>
+    <span class="bubble b5"></span>
   </div>
-  <h1 class="hero-title">📝 Grammar English Kids</h1>
-  <p class="hero-sub">Master English grammar with fun exercises!</p>
-</header>
-
-<!-- ═══════════ NAVIGATION ═══════════ -->
-<nav class="main-nav" id="mainNav">
-  <button class="nav-btn active" data-game="home">🏠 Home</button>
-  <button class="nav-btn" data-game="fill-blank">✏️ Fill in the Blank</button>
-  <button class="nav-btn" data-game="multiple-choice">🔘 Multiple Choice</button>
-  <button class="nav-btn" data-game="sentence-order">🔀 Sentence Order</button>
-  <button class="nav-btn" data-game="error-correction">🔍 Error Correction</button>
-  <button class="nav-btn" data-game="transformation">🔄 Transformation</button>
-  <button class="nav-btn" data-game="matching">🔗 Matching</button>
-  <button class="nav-btn" data-game="learning-guide">📖 Learning Guide</button>
-</nav>
-
-<!-- ═══════════ TOPIC FILTER (shown inside exercises) ═══════════ -->
-<div class="topic-filter" id="topicFilter" style="display:none;">
-  <span class="filter-label">Filter by topic:</span>
-  <button class="topic-btn active" data-topic="all">All</button>
-  <button class="topic-btn" data-topic="tenses">⏰ Tenses</button>
-  <button class="topic-btn" data-topic="parts">🏷️ Parts of Speech</button>
-  <button class="topic-btn" data-topic="structure">🏗️ Sentence Structure</button>
-  <button class="topic-btn" data-topic="articles">📎 Articles</button>
-  <button class="topic-btn" data-topic="comparisons">⚖️ Comparisons</button>
-  <button class="topic-btn" data-topic="modals">🔑 Modals</button>
-  <button class="topic-btn" data-topic="conditionals">🔀 Conditionals</button>
-  <button class="topic-btn" data-topic="passive">🔄 Passive</button>
-  <button class="topic-btn" data-topic="prepositions">📍 Prepositions</button>
-  <button class="topic-btn" data-topic="conjunctions">🔗 Conjunctions</button>
-  <button class="topic-btn" data-topic="relatives">🧩 Relatives</button>
-  <button class="topic-btn" data-topic="gerunds">🎯 Gerunds</button>
-</div>
-
-<!-- ═══════════ HOME SCREEN ═══════════ -->
-<section class="game-panel active" id="panel-home">
-  <div class="home-container">
-    <h2 class="section-title">🌟 Choose an Exercise</h2>
-    <div class="exercise-grid">
-      <div class="exercise-card" data-game="fill-blank">
-        <div class="card-icon">✏️</div>
-        <h3>Fill in the Blank</h3>
-        <p>Complete sentences with the correct word</p>
+  <div class="login-card">
+    <div class="login-icon"></div>
+    <h1 class="login-title">Grammar English Kids</h1>
+    <p class="login-sub">Your personal grammar learning roadmap</p>
+    <div class="login-form">
+      <label class="login-label">What's your name?</label>
+      <input id="inputName" class="login-input" type="text" placeholder="Enter your name..." maxlength="30" autocomplete="off">
+      <div class="login-level-row">
+        <label class="login-label">Choose your level:</label>
+        <div class="level-btns">
+          <button class="level-btn active" data-level="easy"> Beginner (Ages 6-11)</button>
+          <button class="level-btn" data-level="standard"> Standard (Ages 11-15)</button>
+        </div>
       </div>
-      <div class="exercise-card" data-game="multiple-choice">
-        <div class="card-icon">🔘</div>
-        <h3>Multiple Choice</h3>
-        <p>Pick the correct answer from four options</p>
-      </div>
-      <div class="exercise-card" data-game="sentence-order">
-        <div class="card-icon">🔀</div>
-        <h3>Sentence Order</h3>
-        <p>Arrange words to form correct sentences</p>
-      </div>
-      <div class="exercise-card" data-game="error-correction">
-        <div class="card-icon">🔍</div>
-        <h3>Error Correction</h3>
-        <p>Find and fix grammar mistakes</p>
-      </div>
-      <div class="exercise-card" data-game="transformation">
-        <div class="card-icon">🔄</div>
-        <h3>Transformation</h3>
-        <p>Rewrite sentences in a different form</p>
-      </div>
-      <div class="exercise-card" data-game="matching">
-        <div class="card-icon">🔗</div>
-        <h3>Matching</h3>
-        <p>Match items from two columns</p>
-      </div>
+      <button id="btnStart" class="btn-start">Start Learning </button>
     </div>
-
-    <h2 class="section-title" style="margin-top:2rem;">📚 Grammar Topics</h2>
-    <div class="topics-grid" id="topicsGrid"></div>
-  </div>
-</section>
-
-<!-- ═══════════ FILL IN THE BLANK ═══════════ -->
-<section class="game-panel" id="panel-fill-blank">
-  <div class="game-container">
-    <div class="game-header">
-      <h2>✏️ Fill in the Blank</h2>
-      <div class="score-bar">
-        <span id="fb-progress">0 / 0</span>
-        <span id="fb-score">Score: 0</span>
-      </div>
-    </div>
-    <div class="game-body" id="fb-body">
-      <div class="question-card" id="fb-question"></div>
-      <div class="options-grid" id="fb-options"></div>
-      <div class="hint-box" id="fb-hint"></div>
-      <div class="feedback-box" id="fb-feedback"></div>
-      <button class="btn-primary" id="fb-next" style="display:none;">Next →</button>
-    </div>
-    <div class="game-complete" id="fb-complete" style="display:none;">
-      <h3>🎉 Exercise Complete!</h3>
-      <p id="fb-final-score"></p>
-      <button class="btn-primary" id="fb-restart">Try Again</button>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════ MULTIPLE CHOICE ═══════════ -->
-<section class="game-panel" id="panel-multiple-choice">
-  <div class="game-container">
-    <div class="game-header">
-      <h2>🔘 Multiple Choice</h2>
-      <div class="score-bar">
-        <span id="mc-progress">0 / 0</span>
-        <span id="mc-score">Score: 0</span>
-      </div>
-    </div>
-    <div class="game-body" id="mc-body">
-      <div class="question-card" id="mc-question"></div>
-      <div class="options-list" id="mc-options"></div>
-      <div class="feedback-box" id="mc-feedback"></div>
-      <button class="btn-primary" id="mc-next" style="display:none;">Next →</button>
-    </div>
-    <div class="game-complete" id="mc-complete" style="display:none;">
-      <h3>🎉 Exercise Complete!</h3>
-      <p id="mc-final-score"></p>
-      <button class="btn-primary" id="mc-restart">Try Again</button>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════ SENTENCE ORDER ═══════════ -->
-<section class="game-panel" id="panel-sentence-order">
-  <div class="game-container">
-    <div class="game-header">
-      <h2>🔀 Sentence Order</h2>
-      <div class="score-bar">
-        <span id="so-progress">0 / 0</span>
-        <span id="so-score">Score: 0</span>
-      </div>
-    </div>
-    <div class="game-body" id="so-body">
-      <div class="arranged-words" id="so-arranged"></div>
-      <div class="word-bank" id="so-bank"></div>
-      <div class="so-actions">
-        <button class="btn-secondary" id="so-clear">Clear</button>
-        <button class="btn-primary" id="so-check">Check ✓</button>
-      </div>
-      <div class="feedback-box" id="so-feedback"></div>
-      <button class="btn-primary" id="so-next" style="display:none;">Next →</button>
-    </div>
-    <div class="game-complete" id="so-complete" style="display:none;">
-      <h3>🎉 Exercise Complete!</h3>
-      <p id="so-final-score"></p>
-      <button class="btn-primary" id="so-restart">Try Again</button>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════ ERROR CORRECTION ═══════════ -->
-<section class="game-panel" id="panel-error-correction">
-  <div class="game-container">
-    <div class="game-header">
-      <h2>🔍 Error Correction</h2>
-      <div class="score-bar">
-        <span id="ec-progress">0 / 0</span>
-        <span id="ec-score">Score: 0</span>
-      </div>
-    </div>
-    <div class="game-body" id="ec-body">
-      <div class="question-card" id="ec-sentence"></div>
-      <p class="ec-instruction">Click the word with the error:</p>
-      <div class="word-buttons" id="ec-words"></div>
-      <div class="ec-fix-area" id="ec-fix-area" style="display:none;">
-        <label>Correct it to:</label>
-        <input type="text" id="ec-fix-input" class="text-input" placeholder="Type the correction..." autocomplete="off">
-        <button class="btn-primary" id="ec-fix-check">Check ✓</button>
-      </div>
-      <div class="feedback-box" id="ec-feedback"></div>
-      <button class="btn-primary" id="ec-next" style="display:none;">Next →</button>
-    </div>
-    <div class="game-complete" id="ec-complete" style="display:none;">
-      <h3>🎉 Exercise Complete!</h3>
-      <p id="ec-final-score"></p>
-      <button class="btn-primary" id="ec-restart">Try Again</button>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════ TRANSFORMATION ═══════════ -->
-<section class="game-panel" id="panel-transformation">
-  <div class="game-container">
-    <div class="game-header">
-      <h2>🔄 Sentence Transformation</h2>
-      <div class="score-bar">
-        <span id="tf-progress">0 / 0</span>
-        <span id="tf-score">Score: 0</span>
-      </div>
-    </div>
-    <div class="game-body" id="tf-body">
-      <div class="tf-instruction" id="tf-instruction"></div>
-      <div class="question-card" id="tf-original"></div>
-      <div class="tf-input-area">
-        <input type="text" id="tf-input" class="text-input text-input-lg" placeholder="Type your answer..." autocomplete="off">
-        <button class="btn-primary" id="tf-check">Check ✓</button>
-      </div>
-      <div class="hint-box" id="tf-hint"></div>
-      <div class="feedback-box" id="tf-feedback"></div>
-      <button class="btn-primary" id="tf-next" style="display:none;">Next →</button>
-    </div>
-    <div class="game-complete" id="tf-complete" style="display:none;">
-      <h3>🎉 Exercise Complete!</h3>
-      <p id="tf-final-score"></p>
-      <button class="btn-primary" id="tf-restart">Try Again</button>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════ MATCHING ═══════════ -->
-<section class="game-panel" id="panel-matching">
-  <div class="game-container">
-    <div class="game-header">
-      <h2>🔗 Matching</h2>
-      <div class="score-bar">
-        <span id="mt-progress">0 / 0</span>
-        <span id="mt-score">Score: 0</span>
-      </div>
-    </div>
-    <div class="game-body" id="mt-body">
-      <h3 class="mt-title" id="mt-title"></h3>
-      <div class="matching-area" id="mt-area">
-        <div class="match-column" id="mt-left"></div>
-        <div class="match-lines" id="mt-lines"></div>
-        <div class="match-column" id="mt-right"></div>
-      </div>
-      <div class="feedback-box" id="mt-feedback"></div>
-      <button class="btn-primary" id="mt-next" style="display:none;">Next Set →</button>
-    </div>
-    <div class="game-complete" id="mt-complete" style="display:none;">
-      <h3>🎉 Exercise Complete!</h3>
-      <p id="mt-final-score"></p>
-      <button class="btn-primary" id="mt-restart">Try Again</button>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════ LEARNING GUIDE ═══════════ -->
-<section class="game-panel" id="panel-learning-guide">
-  <div class="home-container">
-    <h2 class="section-title">📖 Learning Guide</h2>
-    <p class="guide-intro">Your complete roadmap to mastering English grammar! Click on any topic to learn the rules, see examples, and test yourself.</p>
-
-    <!-- Tabs -->
-    <div class="guide-tabs">
-      <button class="guide-tab active" data-tab="lessons">📚 Grammar Lessons</button>
-      <button class="guide-tab" data-tab="tips">💡 Study Tips</button>
-      <button class="guide-tab" data-tab="path">🗺️ Learning Path</button>
-    </div>
-
-    <!-- Lessons Tab -->
-    <div class="guide-content active" id="tab-lessons">
-      <div class="guide-topics-grid" id="guideTopicsGrid"></div>
-    </div>
-
-    <!-- Study Tips Tab -->
-    <div class="guide-content" id="tab-tips">
-      <div class="tips-grid" id="tipsGrid"></div>
-    </div>
-
-    <!-- Learning Path Tab -->
-    <div class="guide-content" id="tab-path">
-      <div class="path-timeline" id="pathTimeline"></div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════ LESSON MODAL ═══════════ -->
-<div class="lesson-modal-overlay" id="lessonModal">
-  <div class="lesson-modal">
-    <button class="modal-close" id="modalClose">&times;</button>
-    <div class="modal-header">
-      <h2 class="modal-title" id="modalTitle"></h2>
-      <p class="modal-intro" id="modalIntro"></p>
-    </div>
-    <div class="modal-tabs">
-      <button class="modal-tab active" data-mtab="lesson">📖 Lesson</button>
-      <button class="modal-tab" data-mtab="quiz">🧩 Quick Quiz</button>
-    </div>
-    <div class="modal-body" id="modalBody"></div>
-    <div class="modal-quiz" id="modalQuiz" style="display:none;"></div>
   </div>
 </div>
 
-<!-- ═══════════ FLOATING DICTIONARY WIDGET ═══════════ -->
-<button class="dict-fab" id="dictFab" title="Tra cứu từ điển">📖</button>
-<div class="dict-widget" id="dictWidget">
-  <div class="dict-header">
-    <h3>📖 Tra cứu từ điển</h3>
-    <button class="dict-close" id="dictClose">&times;</button>
-  </div>
+<!-- MAIN APP WRAPPER -->
+<div id="appWrapper" class="screen" style="display:none;">
 
-  <!-- Search -->
-  <div class="dict-search">
-    <input type="text" id="dictInput" class="dict-input" placeholder="Gõ từ tiếng Anh..." autocomplete="off">
-    <button class="dict-speak-btn" id="dictSpeak" title="Phát âm">🔊</button>
-  </div>
-
-  <!-- Quick lookup buttons -->
-  <div class="dict-buttons">
-    <button class="dict-btn dict-btn-google" id="dictGoogle">
-      <span class="dict-btn-icon">🌐</span> Google Translate
+  <!-- TOP BAR -->
+  <header class="topbar">
+    <button class="topbar-brand" id="btnHome">
+      <span class="topbar-logo"></span>
+      <span class="topbar-name">Grammar English Kids</span>
     </button>
-    <button class="dict-btn dict-btn-oxford" id="dictOxford">
-      <span class="dict-btn-icon">📕</span> Oxford Learner
-    </button>
-  </div>
+    <div class="topbar-right">
+      <div class="user-info" id="userInfo">
+        <span class="user-avatar"></span>
+        <span class="user-name" id="displayName">Student</span>
+        <span class="user-level-badge" id="displayLevel">Beginner</span>
+      </div>
+      <button class="btn-icon" id="btnLogout" title="Logout"></button>
+    </div>
+  </header>
 
-  <!-- Tabs: iframe / history / suggestions -->
-  <div class="dict-tabs">
-    <button class="dict-tab active" data-dtab="result">💻 Kết quả</button>
-    <button class="dict-tab" data-dtab="history">📜 Lịch sử</button>
-    <button class="dict-tab" data-dtab="suggest">💡 Gợi ý</button>
-  </div>
-
-  <!-- Result iframe -->
-  <div class="dict-panel active" id="dpanel-result">
-    <div class="dict-iframe-wrap">
-      <iframe id="dictIframe" class="dict-iframe" src="about:blank"></iframe>
-      <div class="dict-iframe-fallback" id="dictFallback" style="display:none;">
-        <p>⚠️ Trang này không cho phép nhúng iframe.</p>
-        <a id="dictFallbackLink" href="#" target="_blank" class="dict-btn dict-btn-google">🔗 Mở trong tab mới</a>
+  <!-- DASHBOARD -->
+  <div id="screenDashboard" class="view active">
+    <div class="dashboard-hero">
+      <div class="dh-text">
+        <h2 class="dh-greeting" id="dashGreeting">Hello! </h2>
+        <p class="dh-sub">Keep learning every day to complete your grammar journey!</p>
+      </div>
+      <div class="progress-ring-wrap">
+        <svg class="progress-ring" viewBox="0 0 120 120">
+          <circle class="ring-bg" cx="60" cy="60" r="50"/>
+          <circle class="ring-fill" id="ringFill" cx="60" cy="60" r="50"
+                  stroke-dasharray="314" stroke-dashoffset="314"/>
+        </svg>
+        <div class="ring-label">
+          <span class="ring-pct" id="ringPct">0%</span>
+          <span class="ring-txt">done</span>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- History -->
-  <div class="dict-panel" id="dpanel-history">
-    <div class="dict-history-list" id="dictHistoryList">
-      <p class="dict-empty">Chưa có lịch sử tra cứu</p>
+    <div class="stats-row">
+      <div class="stat-card"><span class="stat-icon"></span><span class="stat-num" id="statDone">0</span><span class="stat-lbl">Sessions Done</span></div>
+      <div class="stat-card"><span class="stat-icon"></span><span class="stat-num" id="statStreak">0</span><span class="stat-lbl">Day Streak</span></div>
+      <div class="stat-card"><span class="stat-icon"></span><span class="stat-num" id="statScore">0</span><span class="stat-lbl">Total Score</span></div>
     </div>
-    <button class="dict-clear-history" id="dictClearHistory">🗑️ Xóa lịch sử</button>
-  </div>
 
-  <!-- Topic suggestions -->
-  <div class="dict-panel" id="dpanel-suggest">
-    <div class="dict-suggest-topics" id="dictSuggestTopics"></div>
-    <div class="dict-suggest-words" id="dictSuggestWords">
-      <p class="dict-empty">Chọn topic để xem gợi ý từ vựng</p>
+    <div class="roadmap-wrap">
+      <h3 class="section-title"> Your Learning Roadmap</h3>
+      <div class="roadmap" id="roadmapEl"></div>
     </div>
   </div>
-</div>
 
-<!-- ═══════════ FOOTER ═══════════ -->
-<footer class="footer">
-  <p>Grammar English Kids &copy; 2025 &mdash; Practice makes perfect! 📝</p>
-</footer>
+  <!-- PHASE DETAIL -->
+  <div id="screenPhase" class="view">
+    <div class="view-header">
+      <button class="btn-back" id="btnBackToDash"> Back to Roadmap</button>
+      <div class="phase-header-info" id="phaseHeaderInfo"></div>
+    </div>
+    <div class="sessions-list" id="sessionsList"></div>
+  </div>
 
-<!-- ═══════════ SCRIPTS ═══════════ -->
-<script src="js/data.js"></script>
-<script src="js/main.js"></script>
-<script src="js/fill-blank.js"></script>
-<script src="js/multiple-choice.js"></script>
-<script src="js/sentence-order.js"></script>
-<script src="js/error-correction.js"></script>
-<script src="js/transformation.js"></script>
-<script src="js/matching.js"></script>
-<script src="js/lessons.js"></script>
-<script src="js/dictionary.js"></script>
+  <!-- SESSION -->
+  <div id="screenSession" class="view">
+    <div class="view-header">
+      <button class="btn-back" id="btnBackToPhase"> Back</button>
+      <div class="session-header-info" id="sessionHeaderInfo"></div>
+      <button class="btn-print" id="btnPrintWorksheet"> Print Worksheet</button>
+    </div>
+    <div class="lesson-card" id="lessonCard"></div>
+    <div class="exercises-wrap" id="exercisesWrap">
+      <div class="ex-toolbar">
+        <h3 class="ex-title"> Practice Exercises</h3>
+        <div class="ex-score" id="exScore">Score: <strong>0 / 0</strong></div>
+      </div>
+      <div id="exercisesList"></div>
+      <div class="ex-check-row">
+        <button class="btn-check" id="btnCheckAll"> Check All Answers</button>
+        <button class="btn-retry" id="btnRetry" style="display:none;"> Try Again</button>
+        <button class="btn-next-session" id="btnNextSession" style="display:none;"> Next Session</button>
+      </div>
+      <div class="ex-result" id="exResult" style="display:none;"></div>
+    </div>
+  </div>
+
+</div><!-- end appWrapper -->
+
+<!-- PRINTABLE WORKSHEET (hidden, shown only on print) -->
+<div id="worksheetPrint" class="worksheet-print-area"></div>
+
+<script src="js/roadmap-data.js"></script>
+<script src="js/exercises-data.js"></script>
+<script src="js/app.js"></script>
+<script src="js/worksheet.js"></script>
 </body>
 </html>
