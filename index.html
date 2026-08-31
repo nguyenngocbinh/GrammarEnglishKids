@@ -1,12 +1,13 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Grammar English Kids  Learning Roadmap</title>
+  <title>Grammar English Kids — Learning Journey</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/ui-v2.css">
 </head>
 <body>
 
@@ -18,20 +19,20 @@
     <span class="bubble b5"></span>
   </div>
   <div class="login-card">
-    <div class="login-icon"></div>
+    <div class="login-icon">🦊</div>
     <h1 class="login-title">Grammar English Kids</h1>
-    <p class="login-sub">Your personal grammar learning roadmap</p>
+    <p class="login-sub">Your personal grammar learning journey</p>
     <div class="login-form">
       <label class="login-label">What's your name?</label>
       <input id="inputName" class="login-input" type="text" placeholder="Enter your name..." maxlength="30" autocomplete="off">
       <div class="login-level-row">
         <label class="login-label">Choose your level:</label>
         <div class="level-btns">
-          <button class="level-btn active" data-level="easy"> Beginner (Ages 6-11)</button>
-          <button class="level-btn" data-level="standard"> Standard (Ages 11-15)</button>
+          <button class="level-btn active" data-level="easy">🐣 Beginner (Ages 6–11)</button>
+          <button class="level-btn" data-level="standard">🚀 Standard (Ages 11–15)</button>
         </div>
       </div>
-      <button id="btnStart" class="btn-start">Start Learning </button>
+      <button id="btnStart" class="btn-start">Start Learning →</button>
     </div>
   </div>
 </div>
@@ -39,19 +40,37 @@
 <!-- MAIN APP WRAPPER -->
 <div id="appWrapper" class="screen" style="display:none;">
 
+  <!-- SIDEBAR -->
+  <aside class="app-sidebar" aria-label="Main navigation">
+    <button class="sidebar-brand" id="sidebarHome" type="button">
+      <span class="sidebar-mascot">🦊</span>
+      <span class="sidebar-brand-text"><strong>Grammar</strong><span>English Kids</span></span>
+    </button>
+
+    <nav class="sidebar-nav">
+      <button class="sidebar-link active" data-view="screenDashboard" type="button"><span class="sidebar-icon">⌂</span><span>Home</span></button>
+      <button class="sidebar-link" data-view="screenDashboard" type="button"><span class="sidebar-icon">🗺️</span><span>Learning Roadmap</span></button>
+      <button class="sidebar-link" data-view="screenPhase" type="button"><span class="sidebar-icon">📖</span><span>Lessons</span></button>
+      <button class="sidebar-link" data-view="screenSession" type="button"><span class="sidebar-icon">🎯</span><span>Practice</span></button>
+      <button class="sidebar-link" data-view="screenDashboard" type="button"><span class="sidebar-icon">🏆</span><span>Progress</span></button>
+      <button class="sidebar-link" data-view="screenDashboard" type="button"><span class="sidebar-icon">👤</span><span>Profile</span></button>
+    </nav>
+
+    <div class="sidebar-coach">
+      <div class="coach-avatar">🦊</div>
+      <div><strong>Keep going!</strong><span>You're doing great! 🚀</span></div>
+    </div>
+  </aside>
+
   <!-- TOP BAR -->
   <header class="topbar">
-    <button class="topbar-brand" id="btnHome">
-      <span class="topbar-logo"></span>
-      <span class="topbar-name">Grammar English Kids</span>
-    </button>
     <div class="topbar-right">
       <div class="user-info" id="userInfo">
-        <span class="user-avatar"></span>
+        <span class="user-avatar">👦</span>
         <span class="user-name" id="displayName">Student</span>
         <span class="user-level-badge" id="displayLevel">Beginner</span>
       </div>
-      <button class="btn-icon" id="btnLogout" title="Logout"></button>
+      <button class="btn-icon" id="btnLogout" title="Logout" aria-label="Logout">↪</button>
     </div>
   </header>
 
@@ -59,30 +78,57 @@
   <div id="screenDashboard" class="view active">
     <div class="dashboard-hero">
       <div class="dh-text">
-        <h2 class="dh-greeting" id="dashGreeting">Hello! </h2>
-        <p class="dh-sub">Keep learning every day to complete your grammar journey!</p>
+        <div class="dh-kicker">✨ CONTINUE YOUR JOURNEY</div>
+        <h2 class="dh-greeting" id="dashGreeting">Hello!</h2>
+        <p class="dh-sub">Let's continue your grammar journey today and build your English skills step by step.</p>
+        <div class="continue-card">
+          <div class="continue-meta">
+            <span class="continue-title">Day 7: Present Simple</span>
+            <span class="continue-phase">Phase 2 · Present Tense</span>
+          </div>
+          <button class="btn-continue" type="button" onclick="document.getElementById('roadmapEl').scrollIntoView({behavior:'smooth'})">Continue Lesson&nbsp; →</button>
+        </div>
       </div>
       <div class="progress-ring-wrap">
         <svg class="progress-ring" viewBox="0 0 120 120">
           <circle class="ring-bg" cx="60" cy="60" r="50"/>
-          <circle class="ring-fill" id="ringFill" cx="60" cy="60" r="50"
-                  stroke-dasharray="314" stroke-dashoffset="314"/>
+          <circle class="ring-fill" id="ringFill" cx="60" cy="60" r="50" stroke-dasharray="314" stroke-dashoffset="314"/>
         </svg>
         <div class="ring-label">
           <span class="ring-pct" id="ringPct">0%</span>
-          <span class="ring-txt">done</span>
+          <span class="ring-txt">journey</span>
         </div>
       </div>
     </div>
 
     <div class="stats-row">
-      <div class="stat-card"><span class="stat-icon"></span><span class="stat-num" id="statDone">0</span><span class="stat-lbl">Sessions Done</span></div>
-      <div class="stat-card"><span class="stat-icon"></span><span class="stat-num" id="statStreak">0</span><span class="stat-lbl">Day Streak</span></div>
-      <div class="stat-card"><span class="stat-icon"></span><span class="stat-num" id="statScore">0</span><span class="stat-lbl">Total Score</span></div>
+      <div class="stat-card"><span class="stat-icon">📚</span><span class="stat-num" id="statDone">0</span><span class="stat-lbl">Lessons Completed</span></div>
+      <div class="stat-card"><span class="stat-icon">🔥</span><span class="stat-num" id="statStreak">0</span><span class="stat-lbl">Day Streak</span></div>
+      <div class="stat-card"><span class="stat-icon">⭐</span><span class="stat-num" id="statScore">0</span><span class="stat-lbl">Total Stars</span></div>
+      <div class="stat-card"><span class="stat-icon">🎯</span><span class="stat-num" id="statAccuracy">—</span><span class="stat-lbl">Learning Focus</span></div>
     </div>
 
+    <aside class="dashboard-side">
+      <section class="v2-widget">
+        <div class="v2-widget-head"><h3>Achievements</h3><span class="v2-viewall">View all</span></div>
+        <div class="achievement-grid">
+          <div class="achievement"><div class="achievement-icon">🛡️</div><strong>First Steps</strong><span>5 lessons</span></div>
+          <div class="achievement"><div class="achievement-icon">🏅</div><strong>Streak Master</strong><span>5 day streak</span></div>
+          <div class="achievement"><div class="achievement-icon">🏆</div><strong>Quiz Expert</strong><span>90%+ score</span></div>
+        </div>
+      </section>
+      <section class="v2-widget">
+        <div class="v2-widget-head"><h3>Upcoming</h3><span class="v2-viewall">View all</span></div>
+        <div class="upcoming-list">
+          <div class="upcoming-item"><div class="upcoming-icon">🎯</div><div><strong>Day 8 · Present Simple</strong><span>Negative sentences</span></div><span class="upcoming-day">→</span></div>
+          <div class="upcoming-item"><div class="upcoming-icon">🎯</div><div><strong>Day 9 · Present Simple</strong><span>Questions</span></div><span class="upcoming-day">→</span></div>
+          <div class="upcoming-item"><div class="upcoming-icon">🎯</div><div><strong>Day 10 · Adverbs</strong><span>Frequency</span></div><span class="upcoming-day">→</span></div>
+        </div>
+      </section>
+    </aside>
+
     <div class="roadmap-wrap">
-      <h3 class="section-title"> Your Learning Roadmap</h3>
+      <h3 class="section-title">🗺️ Your Learning Roadmap</h3>
       <div class="roadmap" id="roadmapEl"></div>
     </div>
   </div>
@@ -90,7 +136,7 @@
   <!-- PHASE DETAIL -->
   <div id="screenPhase" class="view">
     <div class="view-header">
-      <button class="btn-back" id="btnBackToDash"> Back to Roadmap</button>
+      <button class="btn-back" id="btnBackToDash">← Back to Roadmap</button>
       <div class="phase-header-info" id="phaseHeaderInfo"></div>
     </div>
     <div class="sessions-list" id="sessionsList"></div>
@@ -99,21 +145,21 @@
   <!-- SESSION -->
   <div id="screenSession" class="view">
     <div class="view-header">
-      <button class="btn-back" id="btnBackToPhase"> Back</button>
+      <button class="btn-back" id="btnBackToPhase">← Back</button>
       <div class="session-header-info" id="sessionHeaderInfo"></div>
-      <button class="btn-print" id="btnPrintWorksheet"> Print Worksheet</button>
+      <button class="btn-print" id="btnPrintWorksheet">🖨 Print Worksheet</button>
     </div>
     <div class="lesson-card" id="lessonCard"></div>
     <div class="exercises-wrap" id="exercisesWrap">
       <div class="ex-toolbar">
-        <h3 class="ex-title"> Practice Exercises</h3>
+        <h3 class="ex-title">🎯 Practice Exercises</h3>
         <div class="ex-score" id="exScore">Score: <strong>0 / 0</strong></div>
       </div>
       <div id="exercisesList"></div>
       <div class="ex-check-row">
-        <button class="btn-check" id="btnCheckAll"> Check All Answers</button>
-        <button class="btn-retry" id="btnRetry" style="display:none;"> Try Again</button>
-        <button class="btn-next-session" id="btnNextSession" style="display:none;"> Next Session</button>
+        <button class="btn-check" id="btnCheckAll">✓ Check All Answers</button>
+        <button class="btn-retry" id="btnRetry" style="display:none;">↻ Try Again</button>
+        <button class="btn-next-session" id="btnNextSession" style="display:none;">Next Session →</button>
       </div>
       <div class="ex-result" id="exResult" style="display:none;"></div>
     </div>
@@ -121,12 +167,48 @@
 
 </div><!-- end appWrapper -->
 
-<!-- PRINTABLE WORKSHEET (hidden, shown only on print) -->
+<!-- PRINTABLE WORKSHEET -->
 <div id="worksheetPrint" class="worksheet-print-area"></div>
 
 <script src="js/roadmap-data.js"></script>
 <script src="js/exercises-data.js"></script>
 <script src="js/app.js"></script>
 <script src="js/worksheet.js"></script>
+<script>
+  // UI v2 navigation shell: the learning logic remains in app.js.
+  document.querySelectorAll('.sidebar-link').forEach(link => {
+    link.addEventListener('click', () => {
+      const target = link.dataset.view;
+      if (target === 'screenPhase') {
+        const firstUnlocked = (typeof ROADMAP !== 'undefined') ? ROADMAP.find((_, i) => typeof isPhaseUnlocked === 'function' && isPhaseUnlocked(i)) : null;
+        if (firstUnlocked && typeof renderPhase === 'function') {
+          STATE.currentPhaseId = firstUnlocked.id;
+          renderPhase(firstUnlocked.id);
+          showView('screenPhase');
+        } else {
+          showView('screenDashboard');
+        }
+      } else if (target === 'screenSession') {
+        if (STATE.currentSessionId && typeof renderSession === 'function') {
+          renderSession(STATE.currentSessionId);
+          showView('screenSession');
+        } else {
+          showView('screenDashboard');
+        }
+      } else {
+        showView('screenDashboard');
+        updateDashboard();
+      }
+      document.querySelectorAll('.sidebar-link').forEach(x => x.classList.remove('active'));
+      link.classList.add('active');
+    });
+  });
+  document.getElementById('sidebarHome')?.addEventListener('click', () => {
+    showView('screenDashboard');
+    updateDashboard();
+    document.querySelectorAll('.sidebar-link').forEach(x => x.classList.remove('active'));
+    document.querySelector('.sidebar-link')?.classList.add('active');
+  });
+</script>
 </body>
 </html>
